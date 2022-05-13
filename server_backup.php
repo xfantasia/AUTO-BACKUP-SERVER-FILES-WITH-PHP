@@ -1,3 +1,4 @@
+
 <?php
 
 //////////////////////////////////////////////////////  
@@ -13,7 +14,7 @@
 $backup_name = "X";  
 $backup_time = date("Y-m-d")."_".time();
 $path_to_backup = "./";
-$path_to_output = "BACKUP_".$backup_name."_".$backup_time.".zip";
+$path_to_output = "../BACKUP_".$backup_name."_".$backup_time.".zip";
 
 new GoodZipArchive($path_to_backup, $path_to_output) ; 
 
