@@ -12,6 +12,10 @@
 //Now, you can call the script via a browser to run a backup
 //////////////////////////////////////////////////////
 
+///////// !!! IMPORTANT !!! /////////
+// For dowload of your backup .zip file after each backup action, you can uncomment line 48, but this is at your own risk
+// as your files can also be available for anyone who visits this backup link
+
 //core startup variables
 $backup_name = "X"; //change this name 'X' if you have a special name for your backup
 $backup_time = date("Y-m-d")."_".time();
@@ -37,7 +41,11 @@ class GoodZipArchive extends ZipArchive
 				        //$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 						$url = home_base_url();
 						$validURL = str_replace("&", "&amp;", $url);
-				  echo "<a href='".$validURL.'/'.$output_zip_file."' download >Download Backup: <b>".$output_zip_file."</b></a>";
+			       	  //Enable backup download by uncommenting the line below
+			       	  //Ensure the below line is only commented when you must download the backup 
+			          //else anyone with this link can download your entire server files
+			       	  //So you can uncomment the below line at your own risk
+				  //echo "<a href='".$validURL.'/'.$output_zip_file."' download >Download Backup: <b>".$output_zip_file."</b></a>";
 			}
             else{ echo 'Could not create a zip archive. Contact Admin.'; }
         }
