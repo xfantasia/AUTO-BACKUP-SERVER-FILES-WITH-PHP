@@ -2,19 +2,21 @@
 <?php
 
 //////////////////////////////////////////////////////  
-//X-BACKUP 
+//X-BACKUP SERVER PHP SCRIPT
 //This is a simple automated server side file backup built with php
 //File multiple files was gotten from stackoverflow and modified by Atsu Emmanuel
 //atsuemmanuel@gmail.com 
-//Simply place this script on your server and access it via the browser url,
-//thats all, the folder or directory in which this file is place will have all files backed-up 
+//Simply place this single page php script on your server in the directory to be backed-up
+//Finally, create a folder with the name 'xbackup' in that same directory, this is where all backups will reside
+//Thats all, the folder or directory in which this file is placed will have all files archived with .zip and backed-up 
+//Now, you can call the script via a browser to run a backup
 //////////////////////////////////////////////////////
 
 //core startup variables
-$backup_name = "X";  
+$backup_name = "X"; //change this name 'X' if you have a special name for your backup
 $backup_time = date("Y-m-d")."_".time();
 $path_to_backup = "./";
-$path_to_output = "../BACKUP_".$backup_name."_".$backup_time.".zip";
+$path_to_output = "xbackup/BACKUP_".$backup_name."_".$backup_time.".zip";
 
 new GoodZipArchive($path_to_backup, $path_to_output) ; 
 
@@ -52,11 +54,17 @@ class GoodZipArchive extends ZipArchive
         $name .= '/';         $location .= '/';
         // Read all Files in Dir
         $dir = opendir ($location);
+
         while ($file = readdir($dir))    {
-            if ($file == '.' || $file == '..') continue;
-          // Rekursiv, If dir: GoodZipArchive::addDir(), else ::File();
-            $do = (filetype( $location . $file) == 'dir') ? 'addDir' : 'addFile';
-            $this->$do($location . $file, $name . $file);
+		//change 'xbackup' if you renamed your 
+		if($file != 'xbackup')
+		{
+			if (($file == '.' || $file == '..')) continue;
+
+			//Rekursiv, If dir: GoodZipArchive::addDir(), else ::File();
+			$do = (filetype( $location . $file) == 'dir') ? 'addDir' : 'addFile';
+			$this->$do($location . $file, $name . $file);
+		}
         }
     } 
 }
