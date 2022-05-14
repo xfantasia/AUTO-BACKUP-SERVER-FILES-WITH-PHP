@@ -13,8 +13,10 @@
 //////////////////////////////////////////////////////
 
 ///////// !!! IMPORTANT !!! /////////
-// For dowload of your backup .zip file after each backup action, you can uncomment line 48, but this is at your own risk
+// For dowload of your backup .zip file after each backup action, you can uncomment line 50, but this is at your own risk
 // as your files can also be available for anyone who visits this backup link
+// Also ensure this script is renamed to your own anonymous name for security especially if line 50 is uncommented
+
 
 //core startup variables
 $backup_name = "X"; //change this name 'X' if you have a special name for your backup
