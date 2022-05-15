@@ -46,8 +46,10 @@ This is the best backup method, as it can backup different subdirectories for yo
 - $path_to_backup = "./public_html/"; //this is the directory to be backup
 - $path_to_output = "xbackup/BACKUP_".$backup_name."_".$backup_time.".zip"; //this is the directory to store backup
 
-- Not that the home directory looks something like '/home/userX/domain_path/your-web-site'
-
+- Not that the home directory looks something like '/home/userX/public_html/your-web-site' where userX is the account-name
+- So you will be placing your 'xbackup.php' script and the 'xbackup' folder in the user account folder as below
+- '/home/userX/xbackup.php' (Backup Php Script)
+- '/home/userX/xbackup' (Backup Folder)
 
 Set cron-job as below 
 =======================
