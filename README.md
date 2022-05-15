@@ -36,4 +36,36 @@ To setup full automatic backup on your php server, you will have to setup the cr
 (5) Thats all! Your backup is done atomaically every month or week or day depending on what you set up
 (6) All your backups are stored in the 'xbackup' folder in the home directory
 
+CRON-JOB METHOD
+==================
+This is the best backup method, as it can backup different subdirectories for you automatically
+- If you are using a cron job to auto backup, then you will create the backup folder in the home directory of your server,
+- You will also drop the 'xbackup.php' script in the home directory
+- Then ensure to change the parameters in the 'xbackup.php' script to the values below
+
+$path_to_backup = "./public_html/"; //this is the directory to be backup
+$path_to_output = "xbackup/BACKUP_".$backup_name."_".$backup_time.".zip"; //this is the directory to store backup
+
+
+Set cron-job as below 
+=======================
+
+0 0 1 * *	  
+(Set the above time for 1 month action in your cron job feature)
+
+
+/usr/local/bin/php /home/wealthcr/public_html/path/to/cron/script
+(Set the above cron job command to link to the cron job script)
+
+/usr/local/bin/ea-php99 /home/wealthcr/domain_path/path/to/cron/script
+(This is an alternate to the above if your script resides in your website domain and not in the home directory
+
+/usr/bin/php /home/u403660426/xbackup.php
+(This is an actual cron job command example above that links to the 'xbackup.php' script)
+
+
+
+
+
+
 
