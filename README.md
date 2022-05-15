@@ -58,8 +58,12 @@ Set cron-job as below
 - /usr/local/bin/php /home/wealthcr/public_html/path/to/cron/script
 - (Set the above cron job command to link to the cron job script)
 
+----------------------
+
 - /usr/local/bin/ea-php99 /home/wealthcr/domain_path/path/to/cron/script
 - (This is an alternate to the above if your script resides in your website domain and not in the home directory
+
+----------------------
 
 - /usr/bin/php /home/u403660426/xbackup.php
 - (This is an actual cron job command example above that links to the 'xbackup.php' script)
