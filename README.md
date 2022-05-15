@@ -21,3 +21,19 @@ Route::get('/xbackup', function() { return view('pages/xbackup');});
 CONFIGURATIONS
 =================
 Under PHP Configurations of your server, you may have to set up the maxExecutionTime to about 600sec (10mins) to allow.
+
+Then you are to add this 'xbackup.php' script in your views folder of your laravel project.
+
+
+SETTING UP CRON-JOBS FOR CONTINOUS BACKUP WITHOUT YOUR EFFORT
+==============================================================
+To setup full automatic backup on your php server, you will have to setup the cron job e.g. to a monthly backup where by the server does auto backup.
+
+(1) Go to the home directory of your server
+(2) Drop the 'xbackup.php' script inside this home directory
+(3) Create a folder in the home directory called 'xbackup'
+(4) Go to your cron jobs feature of your server and set the cron job to the frequency to run this script, and also locate the script in the cron job section.
+(5) Thats all! Your backup is done atomaically every month or week or day depending on what you set up
+(6) All your backups are stored in the 'xbackup' folder in the home directory
+
+
