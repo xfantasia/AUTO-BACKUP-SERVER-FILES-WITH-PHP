@@ -15,8 +15,8 @@ LARAVEL SEUPT
 =================
 For users making use of laravel, add the below line of code in the .web.php file.
 
-//XBACKUP URL
 Route::get('/xbackup', function() { return view('pages/xbackup');});
+
 
 CONFIGURATIONS
 =================
