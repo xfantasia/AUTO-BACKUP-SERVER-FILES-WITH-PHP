@@ -53,6 +53,7 @@ Set cron-job as below
 - 0 0 1 * *	  
 - (Set the above time for 1 month action in your cron job feature)
 
+----------------------
 
 - /usr/local/bin/php /home/wealthcr/public_html/path/to/cron/script
 - (Set the above cron job command to link to the cron job script)
