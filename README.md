@@ -46,6 +46,8 @@ This is the best backup method, as it can backup different subdirectories for yo
 - $path_to_backup = "./public_html/"; //this is the directory to be backup
 - $path_to_output = "xbackup/BACKUP_".$backup_name."_".$backup_time.".zip"; //this is the directory to store backup
 
+- Not that the home directory looks something like '/home/userX/domain_path/your-web-site'
+
 
 Set cron-job as below 
 =======================
@@ -55,18 +57,20 @@ Set cron-job as below
 
 ----------------------
 
-- /usr/local/bin/php /home/wealthcr/public_html/path/to/cron/script
+- /usr/local/bin/php /home/userX/path/to/cron/script
 - (Set the above cron job command to link to the cron job script)
 
 ----------------------
 
-- /usr/local/bin/ea-php99 /home/wealthcr/domain_path/path/to/cron/script
+- /usr/local/bin/ea-php99 /home/userX/my-web-site-www/path/to/cron/script
 - (This is an alternate to the above if your script resides in your website domain and not in the home directory
 
 ----------------------
 
-- /usr/bin/php /home/u403660426/xbackup.php
-- (This is an actual cron job command example above that links to the 'xbackup.php' script)
+- /usr/bin/php /home/userX/xbackup.php
+- (This is an actual cron job command example above that links to the 'xbackup.php' script placed in the user folder which is in the home directory)
+
+- Note that 'userX' is the name of the user account on your server, this is usually in the home directory as a directory as well
 
 
 
